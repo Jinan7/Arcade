@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="Header Files">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
@@ -13,58 +9,68 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Graphics">
+    <Filter Include="Resource Files\Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files\Source Files\Graphics">
       <UniqueIdentifier>{4d6af5a1-8cfb-46cd-9225-f8040384ec6e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Shapes">
+    <Filter Include="Resource Files\Source Files\Shapes">
       <UniqueIdentifier>{674094cc-f21f-4884-af61-d5f7b7473cec}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\App">
+    <Filter Include="Resource Files\Source Files\App">
       <UniqueIdentifier>{cdd899d6-4192-462c-921a-99940cbf48e6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Scenes">
+    <Filter Include="Resource Files\Source Files\Scenes">
       <UniqueIdentifier>{1d492acd-6335-4c8d-8492-d632a2ac6e49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Source Files\Inputs">
+      <UniqueIdentifier>{13778411-222c-49fe-ba20-db85ff4806f7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Resource Files\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Vec2D.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Resource Files\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Utils.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Resource Files\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Color.cpp">
-      <Filter>Source Files\Graphics</Filter>
+      <Filter>Resource Files\Source Files\Graphics</Filter>
     </ClCompile>
     <ClCompile Include="ScreenBuffer.cpp">
-      <Filter>Source Files\Graphics</Filter>
+      <Filter>Resource Files\Source Files\Graphics</Filter>
     </ClCompile>
     <ClCompile Include="Screen.cpp">
-      <Filter>Source Files\Graphics</Filter>
+      <Filter>Resource Files\Source Files\Graphics</Filter>
     </ClCompile>
     <ClCompile Include="Line2D.cpp">
-      <Filter>Source Files\Shapes</Filter>
+      <Filter>Resource Files\Source Files\Shapes</Filter>
     </ClCompile>
     <ClCompile Include="Shape.cpp">
-      <Filter>Source Files\Shapes</Filter>
+      <Filter>Resource Files\Source Files\Shapes</Filter>
     </ClCompile>
     <ClCompile Include="AARectangle.cpp">
-      <Filter>Source Files\Shapes</Filter>
+      <Filter>Resource Files\Source Files\Shapes</Filter>
     </ClCompile>
     <ClCompile Include="Triangle.cpp">
-      <Filter>Source Files\Shapes</Filter>
+      <Filter>Resource Files\Source Files\Shapes</Filter>
     </ClCompile>
     <ClCompile Include="Circle.cpp">
-      <Filter>Source Files\Shapes</Filter>
+      <Filter>Resource Files\Source Files\Shapes</Filter>
     </ClCompile>
     <ClCompile Include="App.cpp">
-      <Filter>Source Files\App</Filter>
+      <Filter>Resource Files\Source Files\App</Filter>
     </ClCompile>
     <ClCompile Include="ArcadeScene.cpp">
-      <Filter>Source Files\Scenes</Filter>
+      <Filter>Resource Files\Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="GameController.cpp">
+      <Filter>Resource Files\Source Files\Inputs</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -105,6 +111,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ArcadeScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputAction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
