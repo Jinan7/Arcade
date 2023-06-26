@@ -11,6 +11,7 @@ class Line2D;
 class Vec2D;
 class Triangle;
 struct SDL_Window;
+class AARectangle;
 struct SDL_Surface;
 class Screen
 {
@@ -29,6 +30,7 @@ class Screen
 		void Draw(const Vec2D& point, const Color& color);
 		void Draw(const Line2D& line, const Color& color);
 		void Draw(const Triangle& triangle, const Color& color);
+		void Draw(const AARectangle& rect, const Color& color);
 	private:
 		Screen(const Screen& screen);
 		Screen& operator=(const Screen& screen);

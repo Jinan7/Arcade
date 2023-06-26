@@ -3,7 +3,8 @@
 #include <SDL.h>
 #include <cassert>
 #include "Line2D.h"
-#include "Triangle.h"
+#include "Triangle.h""
+#include "AARectangle.h"
 
 Screen::Screen() : mWidth(0), mHeight(0), moptrWindow(nullptr), mnoptrWindowSurface(nullptr)
 {
@@ -131,4 +132,18 @@ void Screen::Draw(const Triangle& triangle, const Color& color) {
 	Draw(p0p1, color);
 	Draw(p1p2, color);
 	Draw(p2p0, color);
+}
+
+void Screen::Draw(const AARectangle& rect, const Color& color) {
+	std::vector<Vec2D> points = rect.GetPoints();
+	Line2D p0p1 = Line2D(points[0], points[1]);
+	Line2D p1p2 = Line2D(points[1], points[2]);
+	Line2D p2p3 = Line2D(points[2], points[3]);
+	Line2D p3p0 = Line2D(points[3], points[0]);
+
+	Draw(p0p1, color);
+	Draw(p1p2, color);
+	Draw(p2p3, color);
+	Draw(p3p0, color);
+
 }
