@@ -1,10 +1,14 @@
 #include <iostream>
 #include <SDL.h>"
 #include "Vec2D.h"
+#include "Color.h"
+#include "ScreenBuffer.h"
 using namespace std;
 
 const int SCREEN_WIDTH = 224;
 const int SCREEN_HEIGHT = 288;
+
+
 int main(int argc, char* []) {
 	
 	if (SDL_Init(SDL_INIT_VIDEO)) {
@@ -18,6 +22,21 @@ int main(int argc, char* []) {
 		std::cout << "Could not create window " << SDL_GetError() << endl;
 	}
 
+	SDL_Surface* noptrWindowSurface = SDL_GetWindowSurface(optrWindow);
+
+	SDL_PixelFormat* pixelFormat = noptrWindowSurface->format;
+	Color::InitColorFormat(pixelFormat);
+	Color c(255, 0, 0, 0);
+
+	ScreenBuffer screenBuffer;
+	screenBuffer.Init(pixelFormat->format, noptrWindowSurface->w, noptrWindowSurface->h);
+	screenBuffer.SetPixel(Color::Red(), SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+	SDL_BlitSurface(screenBuffer.GetSurface(), nullptr, noptrWindowSurface, nullptr);
+	std::cout << "the window pixel format is: " << SDL_GetPixelFormatName(pixelFormat->format);
+
+	uint32_t color = 0xFF0000;
+
+	//SetPixel(noptrWindowSurface, c.GetPixelColor(), SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
 	
 	SDL_Event sdlEvent;
 	bool running = true;
@@ -37,3 +56,4 @@ int main(int argc, char* []) {
 	SDL_Quit();
 	return 0;
 }
+
