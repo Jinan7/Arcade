@@ -2,7 +2,7 @@
 #include <SDL.h>"
 #include "Vec2D.h"
 #include "Color.h"
-#include "ScreenBuffer.h"
+#include "Screen.h"
 using namespace std;
 
 const int SCREEN_WIDTH = 224;
@@ -11,30 +11,18 @@ const int SCREEN_HEIGHT = 288;
 
 int main(int argc, char* []) {
 	
-	if (SDL_Init(SDL_INIT_VIDEO)) {
-		std::cout << "error" << endl;
-		return 1;
-	}
+	Screen theScreen;
+	theScreen.Init(SCREEN_WIDTH, SCREEN_HEIGHT, 1);
+	theScreen.Draw(SCREEN_WIDTH/2, SCREEN_HEIGHT/2, Color::Yellow());
+	theScreen.SwapScreen();
 
-	SDL_Window* optrWindow = SDL_CreateWindow("Arcade", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, 0);
+	//ScreenBuffer screenBuffer;
+	//screenBuffer.Init(pixelFormat->format, noptrWindowSurface->w, noptrWindowSurface->h);
+	//screenBuffer.SetPixel(Color::Red(), SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+	//SDL_BlitSurface(screenBuffer.GetSurface(), nullptr, noptrWindowSurface, nullptr);
+	//std::cout << "the window pixel format is: " << SDL_GetPixelFormatName(pixelFormat->format);
 
-	if (optrWindow == nullptr) {
-		std::cout << "Could not create window " << SDL_GetError() << endl;
-	}
-
-	SDL_Surface* noptrWindowSurface = SDL_GetWindowSurface(optrWindow);
-
-	SDL_PixelFormat* pixelFormat = noptrWindowSurface->format;
-	Color::InitColorFormat(pixelFormat);
-	Color c(255, 0, 0, 0);
-
-	ScreenBuffer screenBuffer;
-	screenBuffer.Init(pixelFormat->format, noptrWindowSurface->w, noptrWindowSurface->h);
-	screenBuffer.SetPixel(Color::Red(), SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
-	SDL_BlitSurface(screenBuffer.GetSurface(), nullptr, noptrWindowSurface, nullptr);
-	std::cout << "the window pixel format is: " << SDL_GetPixelFormatName(pixelFormat->format);
-
-	uint32_t color = 0xFF0000;
+	//uint32_t color = 0xFF0000;
 
 	//SetPixel(noptrWindowSurface, c.GetPixelColor(), SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
 	
@@ -52,8 +40,7 @@ int main(int argc, char* []) {
 	}
 	
 
-	SDL_DestroyWindow(optrWindow);
-	SDL_Quit();
+	
 	return 0;
 }
 
