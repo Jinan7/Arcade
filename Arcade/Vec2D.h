@@ -2,6 +2,7 @@
 #ifndef VEC2D_H_
 #define VEC2D_H_
 #include <iostream>
+#include "Utils.h"
 
 
 class Vec2D
