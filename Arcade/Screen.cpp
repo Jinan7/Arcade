@@ -24,7 +24,7 @@ SDL_Window* Screen::Init(uint32_t w, uint32_t h, uint32_t mag) {
 	mWidth = w;
 	mHeight = h;
 
-	moptrWindow = SDL_CreateWindow("Arcade", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, mWidth, mHeight, 0);
+	moptrWindow = SDL_CreateWindow("Arcade", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, mWidth*mag, mHeight*mag, 0);
 
 	if (moptrWindow) {
 		mnoptrWindowSurface = SDL_GetWindowSurface(moptrWindow);
@@ -44,7 +44,7 @@ void Screen::SwapScreen() {
 	assert(moptrWindow);
 	if (moptrWindow) {
 		ClearScreen();
-		SDL_BlitSurface(mBackBuffer.GetSurface(), nullptr, mnoptrWindowSurface, nullptr);
+		SDL_BlitScaled(mBackBuffer.GetSurface(), nullptr, mnoptrWindowSurface, nullptr);
 		SDL_UpdateWindowSurface(moptrWindow);
 
 		mBackBuffer.Clear(mClearColor);

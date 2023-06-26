@@ -7,12 +7,13 @@ using namespace std;
 
 const int SCREEN_WIDTH = 224;
 const int SCREEN_HEIGHT = 288;
+const int MAGNIFICATION = 2;
 
 
 int main(int argc, char* []) {
 	
 	Screen theScreen;
-	theScreen.Init(SCREEN_WIDTH, SCREEN_HEIGHT, 1);
+	theScreen.Init(SCREEN_WIDTH, SCREEN_HEIGHT, MAGNIFICATION);
 	theScreen.Draw(SCREEN_WIDTH/2, SCREEN_HEIGHT/2, Color::Yellow());
 	theScreen.SwapScreen();
 
