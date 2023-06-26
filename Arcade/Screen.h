@@ -7,6 +7,7 @@
 #include "ScreenBuffer.h"
 #include "Color.h"
 
+class Line2D;
 class Vec2D;
 struct SDL_Window;
 struct SDL_Surface;
@@ -25,6 +26,7 @@ class Screen
 
 		void Draw(int x, int y, const Color& color);
 		void Draw(const Vec2D& point, const Color& color);
+		void Draw(const Line2D& line, const Color& color);
 	private:
 		Screen(const Screen& screen);
 		Screen& operator=(const Screen& screen);
