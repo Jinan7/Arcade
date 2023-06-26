@@ -22,6 +22,9 @@
     <Filter Include="Source Files\App">
       <UniqueIdentifier>{cdd899d6-4192-462c-921a-99940cbf48e6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Scenes">
+      <UniqueIdentifier>{1d492acd-6335-4c8d-8492-d632a2ac6e49}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -60,6 +63,9 @@
     <ClCompile Include="App.cpp">
       <Filter>Source Files\App</Filter>
     </ClCompile>
+    <ClCompile Include="ArcadeScene.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vec2D.h">
@@ -93,6 +99,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="App.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ArcadeScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

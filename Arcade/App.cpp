@@ -8,6 +8,8 @@
 #include "Triangle.h"
 #include  "AARectangle.h"
 #include "Circle.h"
+#include "ArcadeScene.h"
+#include <memory>
 
 App& App::Singleton()
 {
@@ -21,10 +23,7 @@ bool App::Init(uint32_t width, uint32_t height, uint32_t mag) {
 void App::Run() {
 	if (mnoptrWindow) {
 	
-		Line2D line = { Vec2D(0,0), Vec2D(mScreen.Width(), mScreen.Height())};
-		AARectangle rect = { Vec2D(mScreen.Width() / 2 - 25, mScreen.Height() / 2 - 25), 50, 50 };
-		Triangle triangle = { Vec2D(60, 10), Vec2D(10, 110), Vec2D(110,110) };
-		Circle circle = { Vec2D(mScreen.Width() / 2 + 50, mScreen.Height() / 2 + 50), 50 };
+		
 
 
 		SDL_Event sdlEvent;
@@ -34,6 +33,9 @@ void App::Run() {
 		uint32_t currentTick = lastTick;
 		uint32_t dt = 10;
 		uint32_t accumulator = 0;
+
+		std::unique_ptr<ArcadeScene> arcadeScene = std::make_unique<ArcadeScene>();
+		arcadeScene->Init();
 
 		while (running) {
 			currentTick = SDL_GetTicks();
@@ -53,12 +55,12 @@ void App::Run() {
 				}
 			}
 			while (accumulator >= dt) {
+				arcadeScene->Update(dt);
 				std::cout << "delta time " << dt << std::endl;
 				accumulator -= dt;
 			}
 
-			mScreen.Draw(triangle, Color::White(), true, Color::Red());
-			mScreen.Draw(circle, Color::Blue(), true, Color::Red());
+			arcadeScene->Draw(mScreen);
 			mScreen.SwapScreen();
 		}
 
