@@ -3,6 +3,7 @@
 #include <SDL.h>
 #include <cassert>
 #include "Line2D.h"
+#include "Triangle.h"
 
 Screen::Screen() : mWidth(0), mHeight(0), moptrWindow(nullptr), mnoptrWindowSurface(nullptr)
 {
@@ -120,4 +121,14 @@ void Screen::Draw(const Line2D& line, const Color& color) {
 			}
 		}
 	}
+}
+
+void Screen::Draw(const Triangle& triangle, const Color& color) {
+	Line2D p0p1 = Line2D(triangle.GetP0(), triangle.GetP1());
+	Line2D p1p2 = Line2D(triangle.GetP1(), triangle.GetP2());
+	Line2D p2p0 = Line2D(triangle.GetP2(), triangle.GetP0());
+
+	Draw(p0p1, color);
+	Draw(p1p2, color);
+	Draw(p2p0, color);
 }
