@@ -8,5 +8,7 @@ const float TWO_PI = 2.0f * PI;
 bool isEqual(float x, float y);
 bool isGreaterThanOrEqual(float x, float y);
 bool isLessThanOrEqual(float x, float y);
+
+float MillisecondsToSeconds(unsigned int milliseconds);
 #endif // !UTILS_H_
 
