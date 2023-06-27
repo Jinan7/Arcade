@@ -135,9 +135,13 @@
     <ClCompile Include="AARectangle.cpp" />
     <ClCompile Include="App.cpp" />
     <ClCompile Include="ArcadeScene.cpp" />
+    <ClCompile Include="BreakOut.cpp" />
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="Color.cpp" />
+    <ClCompile Include="FileCommandLoader.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameController.cpp" />
+    <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="InputController.cpp" />
     <ClCompile Include="Line2D.cpp" />
     <ClCompile Include="main.cpp" />
@@ -152,9 +156,13 @@
     <ClInclude Include="AARectangle.h" />
     <ClInclude Include="App.h" />
     <ClInclude Include="ArcadeScene.h" />
+    <ClInclude Include="BreakOut.h" />
     <ClInclude Include="Circle.h" />
     <ClInclude Include="Color.h" />
+    <ClInclude Include="FileCommandLoader.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="GameController.h" />
+    <ClInclude Include="GameScene.h" />
     <ClInclude Include="InputAction.h" />
     <ClInclude Include="InputController.h" />
     <ClInclude Include="Scene.h" />

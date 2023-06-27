@@ -28,6 +28,9 @@
     <Filter Include="Resource Files\Source Files\Inputs">
       <UniqueIdentifier>{13778411-222c-49fe-ba20-db85ff4806f7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Source Files\Games">
+      <UniqueIdentifier>{c37d8909-712c-478b-bbe0-47ed5702b539}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -74,6 +77,18 @@
     </ClCompile>
     <ClCompile Include="InputController.cpp">
       <Filter>Resource Files\Source Files\Inputs</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Resource Files\Source Files\Games</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>Resource Files\Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="FileCommandLoader.cpp">
+      <Filter>Resource Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BreakOut.cpp">
+      <Filter>Resource Files\Source Files\Games</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -123,6 +138,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="InputController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FileCommandLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BreakOut.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
