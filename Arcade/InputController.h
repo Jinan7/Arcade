@@ -3,7 +3,7 @@
 #define INPUTCONTROLLER_H_
 
 #include "InputAction.h"
-struct GameController;
+class  GameController;
 
 class InputController
 {
