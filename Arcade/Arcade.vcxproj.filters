@@ -72,6 +72,9 @@
     <ClCompile Include="GameController.cpp">
       <Filter>Resource Files\Source Files\Inputs</Filter>
     </ClCompile>
+    <ClCompile Include="InputController.cpp">
+      <Filter>Resource Files\Source Files\Inputs</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vec2D.h">
@@ -117,6 +120,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

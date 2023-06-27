@@ -35,7 +35,11 @@ void App::Run() {
 		uint32_t lastTick = SDL_GetTicks();
 		uint32_t currentTick = lastTick;
 		uint32_t dt = 10;
-		uint32_t accumulator = 0;
+		uint32_t accumulator = 0; 
+
+			mInputController.Init([&running](uint32_t dt, InputState state) {
+				running = false;
+			});
 
 		std::unique_ptr<ArcadeScene> arcadeScene = std::make_unique<ArcadeScene>();
 		arcadeScene->Init();
@@ -50,19 +54,13 @@ void App::Run() {
 			lastTick = currentTick;
 			accumulator += frameTime;
 
-			while (SDL_PollEvent(&sdlEvent)) {
-				switch (sdlEvent.type) {
-				case SDL_QUIT:
-					running = false;
-					break;
-				}
-			}
+			mInputController.Update(dt);
 			Scene* topScene = App::TopScene();
 			assert(topScene && "there is no scene");
 			if (topScene) {
 				while (accumulator >= dt) {
 					topScene->Update(dt);
-					std::cout << "delta time " << dt << std::endl;
+					//d::cout << "delta time " << dt << std::endl;
 					accumulator -= dt;
 				}
 				topScene->Draw(mScreen);
@@ -81,6 +79,7 @@ void App::PushScene(std::unique_ptr<Scene> scene) {
 	assert(scene && "dont push null ptr");
 	if (scene) {
 		scene->Init();
+		mInputController.SetGameController(scene->GetGameController());
 		mSceneStack.emplace_back(std::move(scene));
 		SDL_SetWindowTitle(mnoptrWindow, TopScene()->GetSceneName().c_str());
 	}
@@ -92,6 +91,7 @@ void App::PopScene() {
 	}
 
 	if (TopScene()) {
+		mInputController.SetGameController(TopScene()->GetGameController());
 		SDL_SetWindowTitle(mnoptrWindow, TopScene()->GetSceneName().c_str());
 	}
 	
