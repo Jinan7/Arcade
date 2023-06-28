@@ -3,6 +3,7 @@
 #define BREAKOUT_H_
 #include "Game.h"
 #include "Paddle.h"
+#include "Ball.h"
 
 class BreakOut: public Game
 {
@@ -15,6 +16,7 @@ class BreakOut: public Game
 	private:
 		void ResetGame();
 		Paddle mPaddle;
+		Ball mBall;
 };
 
 #endif // !1

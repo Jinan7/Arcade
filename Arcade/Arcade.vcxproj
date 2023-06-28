@@ -135,6 +135,7 @@
     <ClCompile Include="AARectangle.cpp" />
     <ClCompile Include="App.cpp" />
     <ClCompile Include="ArcadeScene.cpp" />
+    <ClCompile Include="Ball.cpp" />
     <ClCompile Include="BreakOut.cpp" />
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="Color.cpp" />
@@ -158,6 +159,7 @@
     <ClInclude Include="AARectangle.h" />
     <ClInclude Include="App.h" />
     <ClInclude Include="ArcadeScene.h" />
+    <ClInclude Include="Ball.h" />
     <ClInclude Include="BoundaryEdge.h" />
     <ClInclude Include="BreakOut.h" />
     <ClInclude Include="Circle.h" />
