@@ -18,6 +18,8 @@ public:
 	void MakeFlushWithEdge(const BoundaryEdge& edge, Vec2D pointOnEdge, bool limitToEdge);
 	inline void Stop() { mVelocity = Vec2D::Zero; }
 	void MoveTo(const Vec2D& point);
+	void Bounce(const BoundaryEdge& edge);
+
 	inline const AARectangle GetBoundingRect() const { return mBBox; }
 
 	inline void SetVelocity(const Vec2D& vel) { mVelocity = vel; }

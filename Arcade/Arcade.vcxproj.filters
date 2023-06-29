@@ -102,6 +102,9 @@
     <ClCompile Include="Ball.cpp">
       <Filter>Resource Files\Source Files\Games\BreakOut</Filter>
     </ClCompile>
+    <ClCompile Include="LevelBoundary.cpp">
+      <Filter>Resource Files\Source Files\Games\BreakOut</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vec2D.h">
@@ -174,6 +177,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Ball.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelBoundary.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
